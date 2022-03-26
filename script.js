@@ -1,73 +1,43 @@
-//creo el objeto paquete de viaje//
-class Paquete{
 
-    constructor(id, nombre, destino, precio){
+
+let cards =document.getElementById("cards")
+
+
+
+//creo el objeto menu//
+class Menu{
+
+    constructor(id, imagen, nombre, precio){
         this.id=id;
         this.nombre = nombre;
-        this.destino = destino;
+        this.imagen=imagen;
         this.precio = parseFloat(precio);
     }
-
 }
 
-//creo los diferentes paquetes de viaje//
-const paquete1 = new Paquete(0, "Safari en Africa", "Africa", 6000)
-const paquete2 = new Paquete(1, "Ruinas de Machu Picchu", "Peru", 3000)
-const paquete3 = new Paquete(2, "Viaje al Caribe", "Caribe", 1000)
-const paquete4 = new Paquete(3, "Australia salvaje", "Australia", 7000)
-const paquete5 = new Paquete(4, "Europa clasica", "Europa", 5000)
+//creo los diferentes menus//
+const menu1 = new Menu(0, "/img/agua.jpg"  , "Africa", 6000)
+
 
 //hago un array con los paquetes de viajes//
-let paquetes =[paquete1, paquete2, paquete3, paquete4, paquete5]
+let menus =[menu1]
 
-//creo el objeto estrellas de hoteles//
-class Estrella{
 
-    constructor(id, numero, precio){
-        this.id=id;
-        this.numero = parseFloat(numero);
-        this.precio = precio;
-    }
-
-}
-
-//creo las opciones a elegir//
-const estrella1 = new Estrella(0, 1, 0)
-const estrella2 = new Estrella(1, 2, 200)
-const estrella3 = new Estrella(2, 3, 300)
-const estrella4 = new Estrella(3 , 4, 600)
-const estrella5 = new Estrella(4, 5, 1000)
-
-//hago un array con las estrellas de hoteles//
-let estrellas = [estrella1, estrella2, estrella3, estrella4, estrella5]
-
-let parrafos =document.getElementById("parrafos")
-let parrafo1 =document.getElementById("parrafo1")
-
-//let seleccionDestino = document.getElementById("seleccionDestino")//
-
-parrafo1.innerText += "Hola / Prueba"
-
-//Presento todos los paquetes que hay para seleccionar//
-paquetes.forEach(elemento => {
-
-    parrafo1.innerHTML+= `
-        <div id= "${elemento.id}" class="card"> 
-        <p> Nombre: ${elemento.nombre} </p> 
-        <p> Destino: ${elemento.destino} </p> 
-        <p> Precio base: $${elemento.precio}</p> 
-        
-        </div>
+cards.innerHTML+= `
+        <div <h3 class="card"> prueba2 <h3>
+        </div>      
 
         ` 
-})
 
+menus.forEach(elemento => {
 
-function hotel()
-{
-    var xdestino=document.getElementById("seleccionDestino");
-    var displaytext = xdestino.options[xdestino.selextedIndex].text;
-    document.getElementById("txtvalue").value=displaytext;
-    
-}
-
+            cards.innerHTML+= `
+                <div id= "${elemento.id}" class="card"> 
+                <p> Nombre: ${elemento.nombre} </p> 
+                <img src= "${elemento.imagen}">
+                <p> Precio: $${elemento.precio}</p> 
+                <btn class="btn"> Añadir al carrito </btn>
+                
+                </div>
+                ` 
+        })
