@@ -1,62 +1,4 @@
-
-
-class User {
-    constructor(user, email, password){
-    this.user = user;
-    this.email = email;
-    this.password = password;
-
-    }
-
-    loguearse(){
-        console.log(`${this.user} esta logueado correctamente`)
-    }
-}
-
-let arrayUsuarios = []
-
-/*localStorage.setItem('usuarios',JSON.stringify(arrayUsuarios)) */
-
-if (localStorage.getItem('usuarios')){
-    arrayUsuarios = JSON.parse(localStorage.getItem('usuarios'))
-} else {localStorage.setItem('usuarios',JSON.stringify(arrayUsuarios))} 
-
-let formulario =document.getElementById("idForm")
-let botonMostrarUsuarios =document.getElementById("botonMostrarUsers")
-let divUsers =document.getElementById("divUsuarios")
-
-
-formulario.addEventListener('submit', (e) =>{
-    e.preventDefault()
-
-    let user = document.getElementById('idUser').value
-    let email = document.getElementById('idEmail').value
-    let password = document.getElementById('idPassword').value
-/*
-    let datForm  = new FormData(e.target)
-    console.log(user)
-    console.log(email)
-    console.log(password)
-
-    console.log(datForm.get('user'))
-    console.log(datForm.get('email'))
-    console.log(datForm.get('password')) */
-
-
-    if (!arrayUsuarios.some(usuarioEnArray => usuarioEnArray.email == email)) {
-    const usuario = new User(user, email, password) 
-    arrayUsuarios.push(usuario)
-    localStorage.setItem('usuarios', JSON.stringify(arrayUsuarios))
-    formulario.reset()
-    }
-})
-
-
-
-
-
-
-/*let cards =document.getElementById("cards")
+let cards =document.getElementById("cards")
 
 
 //creo el objeto menu//
@@ -104,5 +46,3 @@ menus.forEach(elemento => {
                 </div>
                 ` 
         })
-
-*/
