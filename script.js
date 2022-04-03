@@ -1,4 +1,5 @@
-
+/*
+    l   NOTA> SE UTILIZA EL LOCAL STORAGE DE FORMA DE PRUEBA YA QUE AUN NO APRENDIMOS A USAR BASES DE DATOS */
 
 class User {
     constructor(user, email, password){
@@ -15,7 +16,6 @@ class User {
 
 let arrayUsuarios = []
 
-/*localStorage.setItem('usuarios',JSON.stringify(arrayUsuarios)) */
 
 if (localStorage.getItem('usuarios')){
     arrayUsuarios = JSON.parse(localStorage.getItem('usuarios'))
@@ -32,15 +32,7 @@ formulario.addEventListener('submit', (e) =>{
     let user = document.getElementById('idUser').value
     let email = document.getElementById('idEmail').value
     let password = document.getElementById('idPassword').value
-/*
-    let datForm  = new FormData(e.target)
-    console.log(user)
-    console.log(email)
-    console.log(password)
 
-    console.log(datForm.get('user'))
-    console.log(datForm.get('email'))
-    console.log(datForm.get('password')) */
 
 
     if (!arrayUsuarios.some(usuarioEnArray => usuarioEnArray.email == email)) {
