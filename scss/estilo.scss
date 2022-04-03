@@ -11,8 +11,18 @@ body {
     }
 }
 
+.comprar_carrito{
+    position:inherit;
+    bottom: 0;
+    width: 100%;
+    margin: 50px;
+    display: flex;
+    align-items:center;
+    
+}
+
 .footer{
-    position: fixed;
+    position:fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -25,6 +35,15 @@ body {
 }
 }
 
+.cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;  
+        margin-top: 1rem;    
+
+}
+
 .card {
     margin-bottom: 20px;
     margin-right: 20px;
@@ -32,17 +51,33 @@ body {
     padding: 1rem;
     border: solid 2px;
     border-color: #cdd8e2;
-    width: fit-content;
-    height: fit-content;
+    width: 20rem;
+    height: 30rem;
     padding: 10 px;
     list-style: none;
     overflow: auto;
     text-align: center;
     background-color: aliceblue;
-    box-shadow: 10px 10px 8px #888888; }
-    .card p {
+    box-shadow: 10px 10px 8px #888888; 
+    p {
       size: 2rem;
       margin: 15px; }
+}
+
+.form{
+  @extend.card;
+  width: 95%;
+  height: 12rem;
+  margin-top: 20px;
+  .btn{
+    margin: 10px;
+  }
+
+}
+
+.carrito_cards{
+  @extend.cards;
+}
   
   .btn {
     font: inherit;
